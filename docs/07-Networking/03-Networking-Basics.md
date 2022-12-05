@@ -4,7 +4,7 @@
 
   #### Switching
 
-  - Switching helps to connect the interface within same network.
+  - Switchers helps to connect the interface within same network.
 
     ![switch](../../images//switch.PNG)
 
