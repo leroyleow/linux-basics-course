@@ -3,11 +3,12 @@
 - Take me to the [Tutorial](https://kodekloud.com/topic/creating-a-systemd-service/)
 
 In this lecture we will learn how to create a SYSTEMD Service.
+
 - All the major distributions, such as Rhel, CentOS, Fedora, Ubuntu, Debian and Archlinux, adopted systemd as their init system.
 - Systemd is a Linux initialization system and service manager that includes features like on-demand starting of daemons, mount and automount point maintenance etc.
 - Systemd also provides a logging daemon and other tools and utilities to help with common system administration tasks.
 
-#### What is a service unit? 
+#### What is a service unit?
 
 - A file with the .service suffix contains information about a process which is managed by systemd. It is composed by three main sections:
 
@@ -25,7 +26,6 @@ In this lecture we will learn how to create a SYSTEMD Service.
     Documentation=http://wiki.caleston-dev.ca/mercury
     After=postgresql.service
     ```
-
 
   #### 2.Service
 
@@ -57,3 +57,7 @@ In this lecture we will learn how to create a SYSTEMD Service.
 
   [~]$ systemctl start project-mercury.service
   ```
+
+#### Example
+
+![System](../../images/SystemDUseCase.png)
