@@ -1,20 +1,22 @@
 # IPTABLES
 
-  - Take me to the [Tutorial](https://kodekloud.com/topic/iptables-introduction/)
-  - In this lecture, we will learn about IPtables basic commands.
-  
-**Iptables** uses a set of tables that have chains that contain a set of built-in or user-defined rules.
-- The two types of tables/rules: 
-1. **FILTER** – this is the default table, which contains the built-in chains for:
- **`INPUT`**  – packages destined for local sockets.
- **`FORWARD`** – packets routed through the system.
- **`OUTPUT`** – packets generated locally.
-2. **NAT** – a table that is consulted when a packet tries to create a new connection. It has the following built-in:
-**`PREROUTING`** – used for altering a packet as soon as it’s received.
-**`OUTPUT`** – used for altering locally-generated packets.
-**`POSTROUTING`** – used for altering packets as they are about to go out.
+- Take me to the [Tutorial](https://kodekloud.com/topic/iptables-introduction/)
+- In this lecture, we will learn about IPtables basic commands.
 
-- For **installing** IPtables in **Ubuntu** servers, 
+**Iptables** uses a set of tables that have chains that contain a set of built-in or user-defined rules.
+
+- The two types of tables/rules:
+
+1. **FILTER** – this is the default table, which contains the built-in chains for:
+   **`INPUT`** – packages destined for local sockets.
+   **`FORWARD`** – packets routed through the system.
+   **`OUTPUT`** – packets generated locally.
+2. **NAT** – a table that is consulted when a packet tries to create a new connection. It has the following built-in:
+   **`PREROUTING`** – used for altering a packet as soon as it’s received.
+   **`OUTPUT`** – used for altering locally-generated packets.
+   **`POSTROUTING`** – used for altering packets as they are about to go out.
+
+- For **installing** IPtables in **Ubuntu** servers,
 
 ```
 bob@devapp01:~$sudo apt install iptables
@@ -34,6 +36,10 @@ target     prot opt source               destination
 Chain OUTPUT (policy ACCEPT)
 target     prot opt source               destination
 ```
+
+The input chain is allow connections in the system. The output chain is to allow connections that are initiated by the system to another system. The forward chain is forward data. E.g. of chain. In the below case request from client 05 does not met the first four input conditions in the chain, in 5th it is met.
+
+![iptablechain](../../images/IPTableChain.png)
 
 - To allow incoming connection from **IP** **172.16.238.187** to port **22** and **80**, you can run the following command.
 
@@ -104,6 +110,7 @@ But, the REJECT command sends an error message back to the source indicating a c
 ```
 bob@devapp01:~$sudo iptables -A OUTPUT -p tcp --dport 80 -j DROP
 ```
+
 This will add rule in the **OUTPUT** chain
 
 ```
@@ -124,6 +131,7 @@ DROP       tcp  --  anywhere             anywhere             tcp dpt:http
 ```
 
 - To allow https connection from the server to **`google.com`**
+
 ```
 bob@devapp01:~$ sudo iptables -I OUTPUT -p tcp -d google.com --dport 443 -j ACCEPT
 ```
@@ -157,6 +165,7 @@ num  target     prot opt source               destination
 ```
 sudo iptables -D INPUT 3
 ```
+
 - To display the **line number** for the rules,
 
 ```
