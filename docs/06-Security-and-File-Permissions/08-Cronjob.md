@@ -35,3 +35,13 @@ The basic usage of **cron** is to execute a job in a specific time. The **`cront
 0 0 0 1 1 *	Every 1st of january (yearly)
 
 @reboot	        Every reboot
+
+10 8 19 2 * Run job on 08:10 AM 19th of Feb
+
+10 8 19 2 1 Run job on 08:10 AM 19th of Feb and has to be Monday
+
+10 8 19 * * Run job on 08:10 AM 19th of every month
+
+10 8 * * * Run job on 08:10 every day
+
+10 * * * * Run job every 10 minutes.
