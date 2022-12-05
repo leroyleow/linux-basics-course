@@ -108,7 +108,14 @@
     ```
     [~]$ chgrp android test-file
     ```
+ #### Commonly Used Permission
 
+  Symbolic | Octal | User Case/Meaning
+  --- | --- | ---
+  -rwx------ | 700 | a file can be only read, edited and excuted by owner. No other have access
+  -rwxxr-xr-x | 755 | allows everyone to execute the file but only owner can edit
+  -rw-rw-r-- | 664 | allow a group of people to modify the file but other read it 
+  
 # HANDS-ON LABS
 
   - Lets do some hands on labs to understand File Permission better. [Take me to Labs](https://kodekloud.com/courses/873064/lectures/17074516)
