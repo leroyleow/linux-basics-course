@@ -153,6 +153,7 @@ $ less new_file.txt
 To get the long list of files and directories. Run **`ls -l`** command
 ```
 $ ls -l
+-rw-rw-r-- 1 bob users 10400 Sep 27 08:52 sales .data -> 1 refers to number of links, bob is owner, group name is users, 10400 refers number of bytes
 ```
 
 To list all files including the hidden. Run **`ls -la`** command

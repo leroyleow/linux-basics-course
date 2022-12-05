@@ -29,6 +29,14 @@ Another way to do this is make use of the **`find`** command. Use the find comma
 $ find /home/michael -name City.txt
 ```
    ![locate-find](../../images/locate-find.PNG)
+
+more find examples
+```
+$ find . -iname pattern -> display file whose name match pattern and ignore case
+$ find . -name "s*" -ls -> find files that start with s then list them
+$ find . -mtime +10 -mtime -14 -> find file that are more than 10 days but less then 13 days
+$ find . -size +300M -> find files that are more than 300MB
+```
    
 ## Grep
 
